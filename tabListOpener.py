@@ -1,8 +1,9 @@
 import os
-import webbrowser
 
-os.system("firefox")
+cmd=["firefox"]
 
 with open('url_list.txt', 'r') as url_file:
     for url in url_file:
-        webbrowser.open(url)
+        cmd.append(url.strip())
+    
+os.system(' '.join(cmd))
